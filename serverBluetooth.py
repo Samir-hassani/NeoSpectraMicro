@@ -9,13 +9,10 @@ import struct
 bool = True
 
 while bool:
-
-
     os.system("sudo sdptool add SP")
-    hostMACAddress = 'B8:27:EB:63:7F:25' # The MAC address of a Bluetooth adapter on the server. The server might have multiple Bluetooth adapters.
     port = 1
     s = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-    s.bind((hostMACAddress, port))
+    s.bind(("", port))
     s.listen(1)
     print("Waiting for connection ...")
     try:
